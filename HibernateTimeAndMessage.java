@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by Lukas on 13.03.2017.
+ * Created by CloudResearch on 13.03.2017.
  */
 @Entity
 @Table(indexes = {

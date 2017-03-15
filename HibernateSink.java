@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by Lukas on 13.03.2017.
+ * Created by CloudResearch on 13.03.2017.
  */
 public class HibernateSink extends RichSinkFunction<TimeAndMessage> {
     private static final SessionFactory ourSessionFactory;
@@ -63,7 +63,7 @@ public class HibernateSink extends RichSinkFunction<TimeAndMessage> {
                            htam.setMessage(timeAndMessage2.getMessage());
                            htam.setPath(timeAndMessage2.getPath());
                            session.save(htam);
-                           //log.info("Webservices record " + wsBean + " saved.");
+
                            numRecordsProcessed++;
                        }
                        session.flush();
@@ -77,19 +77,6 @@ public class HibernateSink extends RichSinkFunction<TimeAndMessage> {
        }
 
 
-/*
-        Date date = new Date(timeAndMessage.getTimestamp().getTime());
-
-
-        HibernateTimeAndMessage htam = new HibernateTimeAndMessage();
-        htam.setDate(date);
-        htam.setMessage(timeAndMessage.getMessage());
-        htam.setPath(timeAndMessage.getPath());
-
-        session.persist(htam);
-        session.flush();
-        session.getTransaction().commit();
-        */
     }
 
     @Override
